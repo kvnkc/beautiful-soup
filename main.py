@@ -17,8 +17,12 @@ for article_tag in articles:
     article_link = article_tag.get('href')
     article_links.append(article_links)
 
+# Turns article upvotes into a list of ints
 article_upvotes = [int(score.getText().split()[0])
                    for score in soup.find_all(name='span', class_='score')]
+
+
+# Finds highest upvote
 a = 0
 for num in article_upvotes:
     if num > a:
